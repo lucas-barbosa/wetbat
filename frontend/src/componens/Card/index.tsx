@@ -1,19 +1,32 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react';
+import { ArrowCounterClockwise, ArrowsOut, DotsThreeVertical } from '@phosphor-icons/react';
 
 type CardProps = {
   icon: ReactNode;
   title: string;
   children: ReactNode;
+  isDraggable?: boolean;
+  isRefreshable?: boolean;
+  hasOptions?: boolean;
 };
 
-export const Card = ({ children, icon, title }: CardProps) => (
-  <section className="rounded border border-gray-400 bg-white shadow-sm">
-    <header className="flex flex-row border-b border-gray-400 p-4">
-      {icon}
-      <h2>{title}</h2>
+export const Card = ({
+  children,
+  icon,
+  title,
+  isDraggable = false,
+  isRefreshable = false,
+  hasOptions = false
+}: CardProps) => (
+  <section className="rounded-md border-2 border-gray-300 bg-white shadow-sm">
+    <header className="flex flex-row items-center gap-2 border-b-2 border-gray-300 px-4 py-2">
+      <span className="text-2xl text-accent-500">{icon}</span>
+      <h2 className="text-lg font-medium text-primary-500">{title}</h2>
 
-      <div className="ml-auto">
-        Items
+      <div className="ml-auto flex flex-row items-center gap-2 text-xl text-gray-400">
+        {isRefreshable && <span><ArrowCounterClockwise weight="bold" /></span>}
+        {isDraggable && <span><ArrowsOut weight="bold"/></span>}
+        {hasOptions && <span><DotsThreeVertical weight="bold" /></span>}
       </div>
     </header>
 
@@ -21,4 +34,4 @@ export const Card = ({ children, icon, title }: CardProps) => (
       {children}
     </div>
   </section>
-)
+);
