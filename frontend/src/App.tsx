@@ -1,21 +1,16 @@
-import { FastForward } from '@phosphor-icons/react';
-import { Card } from './components/Card';
+import { ArcElement, Chart as ChartJS } from 'chart.js';
 import { Header } from './components/Header';
 import { Menu } from './components/Menu';
+import { HomePage } from './pages/Home';
+
+ChartJS.register(ArcElement);
 
 function App() {
   return (
     <>
       <Header />
       <Menu />
-      
-      <section className="mx-auto max-w-sm">
-        <Card
-          icon={<FastForward />}
-          title="Quick Quote">
-          Teste
-        </Card>
-      </section>
+      <HomePage />
     </>
   );
 }
