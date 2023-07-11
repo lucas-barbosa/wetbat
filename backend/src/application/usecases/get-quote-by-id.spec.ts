@@ -30,6 +30,8 @@ describe('Get Quote by Id usecase', () => {
     const result = await getQuoteById.execute(quoteId);
 
     // Assert
+    expect(quoteRepository.getById).toBeCalledTimes(1);
+    expect(quoteRepository.getById).toBeCalledWith(quoteId);
     expect(result.data).toEqual({
       customerName: quote.customerName,
       from: quote.from,
