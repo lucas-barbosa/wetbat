@@ -63,7 +63,7 @@ describe('Create Quote usecase', () => {
       modeOfTransportation: 'Train'
     };
 
-    // Simule um erro inesperado no repositório
+    // Throw a fake error
     quoteRepository.create = jest.fn().mockRejectedValue(new Error());
 
     // Act & Assert
