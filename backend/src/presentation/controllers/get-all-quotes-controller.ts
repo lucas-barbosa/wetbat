@@ -1,7 +1,8 @@
 import { GetAllQuotes } from 'src/application/usecases/get-all-quotes';
 import { badRequest, ok, serverError } from './helpers/http-errors';
+import { Controller } from './ports/controller';
 
-export class GetAllQuotesController {
+export class GetAllQuotesController implements Controller {
   private readonly _getAllQuotes: GetAllQuotes;
 
   constructor (getAllQuotes: GetAllQuotes) {

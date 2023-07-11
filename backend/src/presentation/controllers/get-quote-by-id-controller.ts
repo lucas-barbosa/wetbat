@@ -1,8 +1,9 @@
 import { GetQuoteById } from 'src/application/usecases/get-quote-by-id';
 import { notFound, ok, serverError } from './helpers/http-errors';
+import { Controller } from './ports/controller';
 import { HttpRequest } from './ports/http';
 
-export class GetQuoteByIdController {
+export class GetQuoteByIdController implements Controller {
   private readonly _getQuoteById: GetQuoteById;
 
   constructor (getQuoteById: GetQuoteById) {

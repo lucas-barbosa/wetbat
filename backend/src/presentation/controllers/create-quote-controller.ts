@@ -1,8 +1,9 @@
 import { CreateQuote } from 'src/application/usecases/create-quote';
 import { badRequest, created, serverError } from './helpers/http-errors';
+import { Controller } from './ports/controller';
 import { HttpRequest } from './ports/http';
 
-export class CreateQuoteController {
+export class CreateQuoteController implements Controller {
   private readonly _createQuote: CreateQuote;
 
   constructor (createQuote: CreateQuote) {
