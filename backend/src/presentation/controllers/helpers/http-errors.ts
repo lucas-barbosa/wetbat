@@ -16,8 +16,11 @@ export const badRequest = (errorMessage: string): HttpResponse => ({
   }
 });
 
-export const notFound = (): HttpResponse => ({
-  statusCode: 404
+export const notFound = (errorMessage?: string): HttpResponse => ({
+  statusCode: 404,
+  body: {
+    error: errorMessage ?? ''
+  }
 });
 
 export const serverError = (error: Error): HttpResponse => ({
