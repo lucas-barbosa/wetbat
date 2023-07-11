@@ -10,6 +10,9 @@
     ],
     "overrides": [
     ],
+    "plugins": [
+        "jest"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
