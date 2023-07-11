@@ -4,8 +4,8 @@ import { badRequest, ok, serverError } from './helpers/http-errors';
 export class GetAllQuotesController {
   private readonly _getAllQuotes: GetAllQuotes;
 
-  constructor (createQuote: GetAllQuotes) {
-    this._getAllQuotes = createQuote;
+  constructor (getAllQuotes: GetAllQuotes) {
+    this._getAllQuotes = getAllQuotes;
   }
 
   async handle () {
