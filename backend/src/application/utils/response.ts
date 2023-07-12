@@ -14,6 +14,6 @@ export class Response<T> {
   }
 
   static failed (message?: string): Response<unknown> {
-    return new Response(false, message);
+    return new Response(false, message ?? '');
   }
 }
