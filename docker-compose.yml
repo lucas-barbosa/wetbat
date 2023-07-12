@@ -1,0 +1,20 @@
+services:
+  database:
+    container_name: db
+    image: postgres:15.3
+    environment:
+      POSTGRES_USER: wetbat-admin
+      POSTGRES_PASSWORD: ak8NP89Q070*
+      POSTGRES_DB: wetbat
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  backend:
+    container_name: api
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://wetbat-admin:ak8NP89Q070*@database:5432/wetbat?schema=public
+      - PORT=3000
+    depends_on:
+      - database
