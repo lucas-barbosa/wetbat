@@ -13,7 +13,7 @@ export class GetQuoteById {
       return Response.failed('Quote ID should be greater than 1');
     }
 
-    const quote = await this._quoteRepository.getById(quoteId);
+    const quote = await this._quoteRepository.getById(Number(quoteId));
 
     if (!quote) {
       return Response.failed(`Quote not found with following ID: ${quoteId}`);
