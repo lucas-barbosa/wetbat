@@ -1,4 +1,11 @@
+import { logger } from 'src/infra/logger';
 import { setupApp } from './config/app';
 
 const app = setupApp();
-app.listen(3000, () => console.log('Server running at http://localhost:3000'));
+const port = process.env.PORT ?? 3000;
+
+app.listen(port, () => {
+  const message = `Server running at http://localhost:${port}`;
+  logger.info(`${message} - ${new Date()}`);
+  console.log(message);
+});
