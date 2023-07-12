@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.leaflet-control-zoom {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+  border: 0 !important;
+}
+
+.leaflet-control-zoom a {
+  border: 1px solid gray !important;
+  border-radius: 50% !important;
+  color: gray;
+}
+
+.leaflet-control-zoom a:hover:not(.leaflet-disabled) {
+  color: #5BBFBA;
+  border-color: #5BBFBA !important;
+  background: rgba(172, 220, 220, 0.1);
+}

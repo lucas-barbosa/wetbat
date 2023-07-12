@@ -17,7 +17,7 @@ const menuItems = [
 ];
 
 export const Menu = () => (
-  <aside className="fixed z-10 h-full bg-gray-100">
+  <aside className="absolute z-10 h-full bg-gray-100">
     <nav className="flex flex-col">
       {menuItems.map((group, index) => (
         <div key={`menu-group-${index}`} className="border-b border-gray-400">
