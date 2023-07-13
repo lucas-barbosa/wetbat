@@ -19,6 +19,11 @@ export class QuoteRepository implements IQuoteRepository {
 
   async getAll () {
     return prisma.quote.findMany({
+      orderBy: [
+        {
+          createdAt: 'desc'
+        }
+      ],
       take: 10
     });
   }
