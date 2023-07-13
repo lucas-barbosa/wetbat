@@ -26,7 +26,7 @@ export const Hero = ({ className = '', reportItems = defaultReportItems }: HeroP
 
       <div className="flex w-full flex-col items-center gap-8">
         <img
-          src="/hero.svg"
+          src="hero.svg"
           alt="A man working on a computer and a man and woman watching and talking to him"
           className="w-full max-w-sm"
         /> 

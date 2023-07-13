@@ -7,28 +7,28 @@ const defaultMessages: Message[] = [
     userName: 'John Doe',
     content: 'Hey! I want to place my package',
     time: '13:40 PM',
-    image: '/images/faces/face-1.png'
+    image: 'images/faces/face-1.png'
   },
   {
     id: 'rand-message-456',
     userName: 'Jane Smith',
     content: 'Hey! I want to place my package',
     time: '13:50 PM',
-    image: '/images/faces/face-2.png'
+    image: 'images/faces/face-2.png'
   },
   {
     id: 'rand-message-789',
     userName: 'Jack Taylor',
     content: 'Hey! I want to place my package',
     time: '14:40 PM',
-    image: '/images/faces/face-3.png'
+    image: 'images/faces/face-3.png'
   },
   {
     id: 'rand-message-000 ',
     userName: 'Jane Doe',
     content: 'Hey! I want to place my package',
     time: '15:40 PM',
-    image: '/images/faces/face-4.png'
+    image: 'images/faces/face-4.png'
   }
 ];
 

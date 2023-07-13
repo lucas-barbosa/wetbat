@@ -15,7 +15,7 @@ export const Header = ({ onOpenSidebarClick }: HeaderProps) => (
         </button>
 
         <a href="/" title="Go to WetBat Home">
-          <img src="/wetbat.png" title="WetBat Logo" className="h-10" />
+          <img src="wetbat.png" title="WetBat Logo" className="h-10" />
         </a>
       </div>
 

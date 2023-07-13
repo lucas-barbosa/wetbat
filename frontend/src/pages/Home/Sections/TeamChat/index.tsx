@@ -4,25 +4,25 @@ import { Card } from '../../../../components/Card';
 const defaultUsers: User[] = [
   {
     id: 'customer-service-1',
-    image: '/images/faces/face-5.png',
+    image: 'images/faces/face-5.png',
     name: 'Peter Rock',
     active: true
   },
   {
     id: 'customer-service-2',
-    image: '/images/faces/face-8.png',
+    image: 'images/faces/face-8.png',
     name: 'Ethan Anderson',
     active: true
   },
   {
     id: 'customer-service-3',
-    image: '/images/faces/face-7.png',
+    image: 'images/faces/face-7.png',
     name: 'Olivia Roberts',
     active: true
   },
   {
     id: 'customer-service-4',
-    image: '/images/faces/face-6.png',
+    image: 'images/faces/face-6.png',
     name: 'Emily Johnson',
     active: false
   }

@@ -49,7 +49,7 @@ export const WorldMap = () => (
           <Marker key={`marker-${index}`} position={place.position as LatLngExpression} icon={markerIcon}>
             <Popup autoPan={false}>
               <section className="max-w-[180px]">
-                <img src="/beach.webp" alt="Beach image" className="mb-2 w-full rounded-md object-cover" />
+                <img src="beach.webp" alt="Beach image" className="mb-2 w-full rounded-md object-cover" />
 
                 <h3 className="text-sm font-bold text-primary-500">Lorem ipsum dolor sit</h3>
                 <p className="text-xs text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
