@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --toastify-color-success: #5BBFBA;
+}
+
 .leaflet-control-zoom {
   display: flex;
   flex-direction: row-reverse;
@@ -19,4 +23,12 @@
   color: #5BBFBA;
   border-color: #5BBFBA !important;
   background: rgba(172, 220, 220, 0.1);
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
 }
