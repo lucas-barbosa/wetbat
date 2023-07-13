@@ -7,8 +7,8 @@ type HeaderProps = {
 }
 
 export const Header = ({ onOpenSidebarClick }: HeaderProps) => (
-  <header className="relative bg-primary-500 text-white">
-    <div className="container mx-auto flex flex-row items-center justify-between py-4">
+  <header className="sticky top-0 z-30 bg-primary-500 text-white">
+    <div className="mx-auto flex flex-row items-center justify-between py-4 xl:container max-xl:px-6 max-md:px-4">
       <div className="flex items-center gap-6">
         <button title="Open side menu" onClick={onOpenSidebarClick}>
           <GridFour weight="fill" size={35} />
@@ -20,9 +20,11 @@ export const Header = ({ onOpenSidebarClick }: HeaderProps) => (
       </div>
 
       <div className="flex items-center gap-10 text-2xl">
-        <SearchBar />
+        <div className="max-md:hidden">
+          <SearchBar />
+        </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 max-sm:hidden">
           <button type="button" title="Show Notifications" className="p-2 outline-accent-500">
             <span><BellSimple weight="bold" /></span>
           </button>

@@ -31,6 +31,7 @@ export const Menu = ({ isMenuOpened, onCloseMenuClick }: MenuProps) => {
         <button
           type="button"
           className="absolute right-2 top-2 rounded-full p-2 text-primary-500 hover:text-primary-400 md:hidden"
+          title="Close menu"
           onClick={onCloseMenuClick}>
           <X size={25} />
         </button>

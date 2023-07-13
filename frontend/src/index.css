@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  position: relative;
+}
+
 :root {
   --toastify-color-success: #5BBFBA;
 }
