@@ -40,7 +40,7 @@ export const WorldMap = () => (
     minZoom={3}
     center={[0,0]}
     zoomControl={false}
-    style={{ width: '100%', height: '100%', background: 'transparent' }}>
+    style={{ flex: '1', width: '100%', height: '100%', background: 'transparent' }}>
       <ImageOverlay bounds={[[-47,45],[0,-55]]} url="/map.png" />
 
       <ZoomControl position="bottomleft" />

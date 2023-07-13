@@ -37,17 +37,19 @@ type User = {
 
 type TeamChatProps = {
   users?: User[];
+  className?: string;
 };
 
-export const TeamChat = ({ users = defaultUsers }: TeamChatProps) => (
+export const TeamChat = ({ className = '', users = defaultUsers }: TeamChatProps) => (
   <Card
     icon={<Chat />}
     title="Team chat"
+    className={className}
     hasOptions>
     <ul>
       {users.map(user => (
         <li key={`team-chat-user-${user.id}`}
-          className="flex cursor-pointer flex-row items-center gap-4 px-4 py-5 text-gray-500 hover:bg-gray-100 hover:text-primary-500">
+          className="flex cursor-pointer flex-row items-center gap-4 p-4 text-gray-500 hover:bg-gray-100 hover:text-primary-500">
           <div className="relative">
           <img src={user.image} alt={`${user.name} photo`} className="block h-14 w-14 rounded-lg object-cover" />
             <span

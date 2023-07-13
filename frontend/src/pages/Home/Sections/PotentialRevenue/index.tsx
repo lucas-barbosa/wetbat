@@ -51,7 +51,12 @@ const chartData3 = {
 };
 
 const chartPieOptions = {
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  plugins: {
+    tooltip: {
+      enabled: false
+    }
+  }
 };
 
 export const PotentialRevenue = () => {
