@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet';
+import { Icon, LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 import { MapContainer, ImageOverlay, ZoomControl, Marker, Popup, FeatureGroup } from 'react-leaflet';
 
 const bounds = [
@@ -35,8 +35,7 @@ const places = [
 
 export const WorldMap = () => (
   <MapContainer
-    bounds={bounds}
-    // maxBounds={bounds}
+    bounds={bounds as LatLngBoundsExpression}
     minZoom={3}
     center={[0,0]}
     zoomControl={false}
@@ -47,8 +46,8 @@ export const WorldMap = () => (
 
       <FeatureGroup>
         {places.map((place, index) => (
-          <Marker key={`marker-${index}`} position={place.position} icon={markerIcon}>
-            <Popup autoPan={false} position="left">
+          <Marker key={`marker-${index}`} position={place.position as LatLngExpression} icon={markerIcon}>
+            <Popup autoPan={false}>
               <section className="max-w-[180px]">
                 <img src="/beach.webp" alt="Beach image" className="mb-2 w-full rounded-md object-cover" />
 
