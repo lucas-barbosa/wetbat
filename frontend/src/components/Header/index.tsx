@@ -1,11 +1,19 @@
-import { BellSimple, Chat, Gear } from '@phosphor-icons/react';
+import { BellSimple, Chat, Gear, GridFour } from '@phosphor-icons/react';
 import { SearchBar } from './SearchBar';
 import { UserAccountMenu } from './UserAccountMenu';
 
-export const Header = () => (
+type HeaderProps = {
+  onOpenSidebarClick: () => void;
+}
+
+export const Header = ({ onOpenSidebarClick }: HeaderProps) => (
   <header className="relative bg-primary-500 text-white">
     <div className="container mx-auto flex flex-row items-center justify-between py-4">
-      <div>
+      <div className="flex items-center gap-6">
+        <button title="Open side menu" onClick={onOpenSidebarClick}>
+          <GridFour weight="fill" size={35} />
+        </button>
+
         <a href="/" title="Go to WetBat Home">
           <img src="/wetbat.png" title="WetBat Logo" className="h-10" />
         </a>
