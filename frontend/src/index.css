@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #edf0f9;
+}
+
 #root {
   position: relative;
 }

@@ -26,7 +26,7 @@ export const Menu = ({ isMenuOpened, onCloseMenuClick }: MenuProps) => {
   const closedMenuClasses = '-translate-x-full';
 
   return (
-    <aside className={`absolute z-10 h-full bg-gray-100 transition-transform max-md:w-1/2 max-sm:w-full md:translate-x-0 ${isMenuOpened ? openedMenuClasses : closedMenuClasses}`}>
+    <aside className={`absolute z-10 h-full bg-[#e6e6e6] transition-transform max-md:w-1/2 max-sm:w-full md:translate-x-0 ${isMenuOpened ? openedMenuClasses : closedMenuClasses}`}>
       <nav className="relative flex flex-col">
         <button
           type="button"

@@ -6,8 +6,8 @@ services:
       POSTGRES_USER: wetbat-admin
       POSTGRES_PASSWORD: ak8NP89Q070*
       POSTGRES_DB: wetbat
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
   backend:
     container_name: api
     build: ./backend
