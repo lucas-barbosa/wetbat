@@ -33,7 +33,7 @@ export const Hero = ({ className = '', reportItems = defaultReportItems }: HeroP
 
         <ul className="flex w-full max-w-lg flex-wrap justify-between gap-4">
           {reportItems.map(reportItem => (
-            <li className="flex items-center">
+            <li className="flex items-center" key={`report-item-${reportItem.label}`}>
               <span className="text-5xl font-bold text-yellow-500 drop-shadow-lg">{reportItem.count}</span>
               <span className="ml-2 w-min uppercase leading-5 text-white">{reportItem.label}</span>
             </li>

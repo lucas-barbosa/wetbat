@@ -41,40 +41,42 @@ export const QuoteModal = ({
         
         <div className="relative flex-auto p-6 text-left">
           <table>
-            <tr>
-              <th className="py-1 pr-2 font-medium">Customer Name:</th>
-              <td>{customerName}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Customer Name:</th>
+                <td>{customerName}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">From:</th>
-              <td>{from}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">From:</th>
+                <td>{from}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">Destination:</th>
-              <td>{destination}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Destination:</th>
+                <td>{destination}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">Departure Date:</th>
-              <td>{new Date(departureDate).toDateString()}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Departure Date:</th>
+                <td>{new Date(departureDate).toDateString()}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">Return Date:</th>
-              <td>{new Date(returnDate).toDateString()}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Return Date:</th>
+                <td>{new Date(returnDate).toDateString()}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">Quantity of People:</th>
-              <td>{passengerCount}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Quantity of People:</th>
+                <td>{passengerCount}</td>
+              </tr>
 
-            <tr>
-              <th className="py-1 pr-2 font-medium">Mode of Transportation:</th>
-              <td>{modeOfTransportation}</td>
-            </tr>
+              <tr>
+                <th className="py-1 pr-2 font-medium">Mode of Transportation:</th>
+                <td>{modeOfTransportation}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

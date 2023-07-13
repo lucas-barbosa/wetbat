@@ -73,7 +73,7 @@ export const PendingQuotes = () => {
               )}
 
               {!!data?.length && data.map(item => (
-                <tr>
+                <tr key={`pending-quote-${item.id}`}>
                   <td className="py-2">
                     <button
                       type="button"
