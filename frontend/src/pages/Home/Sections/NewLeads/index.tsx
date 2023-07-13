@@ -53,7 +53,7 @@ export const NewLeads = ({ messages = defaultMessages }: NewLeadsProps) => (
   >
     <ul className="flex w-full flex-col gap-2 overflow-hidden">
       {messages.map(message => (
-        <li key={`message-${message.id}`} className="flex cursor-pointer flex-row items-center gap-4 p-4 text-gray-500 hover:bg-gray-100 hover:text-primary-500">
+        <li key={`message-${message.id}`} className="flex cursor-pointer flex-row items-center gap-4 p-4 text-gray-500 transition-colors hover:bg-gray-100 hover:text-primary-500">
           <img src={message.image} alt={`${message.userName} photo`} className="h-14 w-14 rounded-full" />
 
           <div className="flex w-full flex-row justify-between gap-2">

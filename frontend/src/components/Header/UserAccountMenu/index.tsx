@@ -36,8 +36,8 @@ export const UserAccountMenu = () => {
           </div>
 
           <ul className="z-10 mt-2 divide-y divide-gray-100 border-t border-gray-100 bg-white py-2 font-medium">
-            <li><a className="block w-full px-3 py-2 text-left hover:bg-blue-100" href="/my-account">Meu Perfil</a></li>
-            <li><button className="block w-full px-3 py-2 text-left hover:bg-blue-100" type="button">Sair</button></li>
+            <li><a className="block w-full px-3 py-2 text-left transition-colors hover:bg-blue-100" href="/my-account">Meu Perfil</a></li>
+            <li><button className="block w-full px-3 py-2 text-left transition-colors hover:bg-blue-100" type="button">Sair</button></li>
           </ul>
         </div>
       )}

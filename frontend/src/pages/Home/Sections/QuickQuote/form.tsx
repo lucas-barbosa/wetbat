@@ -149,7 +149,7 @@ export const QuickQuoteForm = () => {
 
       <button
         type="submit"
-        className="self-center rounded-full bg-accent-500 py-4 font-medium text-white hover:bg-accent-400 disabled:bg-accent-300"
+        className="self-center rounded-full bg-accent-500 py-4 font-medium text-white transition-colors hover:bg-accent-400 disabled:bg-accent-300"
         disabled={isSubmitting}>
         {isSubmitting ? 'Creating...' : 'Create a quote'}
       </button>

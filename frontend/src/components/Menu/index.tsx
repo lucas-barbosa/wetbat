@@ -30,7 +30,7 @@ export const Menu = ({ isMenuOpened, onCloseMenuClick }: MenuProps) => {
       <nav className="relative flex flex-col">
         <button
           type="button"
-          className="absolute right-2 top-2 rounded-full p-2 text-primary-500 hover:text-primary-400 md:hidden"
+          className="absolute right-2 top-2 rounded-full p-2 text-primary-500 transition-colors hover:text-primary-400 md:hidden"
           title="Close menu"
           onClick={onCloseMenuClick}>
           <X size={25} />
@@ -41,7 +41,7 @@ export const Menu = ({ isMenuOpened, onCloseMenuClick }: MenuProps) => {
             {group.map(item => (
               <a key={`menu-item-${item.title}`}
                 href={item.href}
-                className="flex flex-row items-center gap-2 px-6 py-4 font-medium text-primary-500 hover:bg-primary-200">
+                className="flex flex-row items-center gap-2 px-6 py-4 font-medium text-primary-500 transition-colors hover:bg-primary-200">
                 <span className="text-xl">{item.icon}</span>
                 <span>{item.title}</span>
               </a>

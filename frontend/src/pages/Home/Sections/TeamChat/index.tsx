@@ -49,7 +49,7 @@ export const TeamChat = ({ className = '', users = defaultUsers }: TeamChatProps
     <ul>
       {users.map(user => (
         <li key={`team-chat-user-${user.id}`}
-          className="flex cursor-pointer flex-row items-center gap-4 p-4 text-gray-500 hover:bg-gray-100 hover:text-primary-500">
+          className="flex cursor-pointer flex-row items-center gap-4 p-4 text-gray-500 transition-colors hover:bg-gray-100 hover:text-primary-500">
           <div className="relative">
           <img src={user.image} alt={`${user.name} photo`} className="block h-14 w-14 rounded-lg object-cover" />
             <span

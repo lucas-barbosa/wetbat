@@ -78,7 +78,7 @@ export const PendingQuotes = () => {
                     <button
                       type="button"
                       onClick={() => setSelectedQuote(item)}
-                      className="underline hover:text-primary-500">
+                      className="underline transition-colors hover:text-primary-500">
                       {item.id.toString().padStart(8, '0')}
                     </button>
                   </td>
