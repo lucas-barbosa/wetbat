@@ -29,7 +29,10 @@ describe('Create Quote usecase', () => {
     // Assert
     expect(result.success).toBeTruthy();
     expect(quoteRepository.create).toBeCalledTimes(1);
-    expect(quoteRepository.create).toBeCalledWith(payload);
+    expect(quoteRepository.create).toBeCalledWith({
+      id: 0,
+      ...payload
+    });
   });
 
   it('should return error response for invalid payload', async () => {

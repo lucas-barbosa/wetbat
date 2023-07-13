@@ -44,6 +44,7 @@ describe('Get All Quotes usecase', () => {
     // Assert
     expect(quoteRepository.getAll).toBeCalledTimes(1);
     expect(result.data).toEqual(quotes.map((quote) => ({
+      id: quote.id,
       customerName: quote.customerName,
       from: quote.from,
       destination: quote.destination,

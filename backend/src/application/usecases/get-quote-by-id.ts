@@ -20,6 +20,7 @@ export class GetQuoteById {
     }
 
     return Response.success({
+      id: quote.id,
       customerName: quote.customerName,
       from: quote.from,
       destination: quote.destination,

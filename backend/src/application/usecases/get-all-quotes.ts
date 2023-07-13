@@ -12,6 +12,7 @@ export class GetAllQuotes {
     const quotes = await this._quoteRepository.getAll();
 
     return Response.success(quotes.map(quote => ({
+      id: quote.id,
       customerName: quote.customerName,
       from: quote.from,
       destination: quote.destination,

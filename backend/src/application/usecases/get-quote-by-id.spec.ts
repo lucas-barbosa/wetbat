@@ -33,6 +33,7 @@ describe('Get Quote by Id usecase', () => {
     expect(quoteRepository.getById).toBeCalledTimes(1);
     expect(quoteRepository.getById).toBeCalledWith(quoteId);
     expect(result.data).toEqual({
+      id: quote.id,
       customerName: quote.customerName,
       from: quote.from,
       destination: quote.destination,
