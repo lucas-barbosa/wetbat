@@ -9,7 +9,7 @@ const bounds = [
 ];
 
 const markerIcon = new Icon({
-  iconUrl: '/map-marker.svg',
+  iconUrl: 'map-marker.svg',
   iconSize: [24, 24],
 });
 
@@ -40,7 +40,7 @@ export const WorldMap = () => (
     center={[0,0]}
     zoomControl={false}
     style={{ flex: '1', width: '100%', height: '100%', background: 'transparent' }}>
-      <ImageOverlay bounds={[[-47,45],[0,-55]]} url="/map.png" />
+      <ImageOverlay bounds={[[-47,45],[0,-55]]} url="map.png" />
 
       <ZoomControl position="bottomleft" />
 
