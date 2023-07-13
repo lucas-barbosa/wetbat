@@ -7,7 +7,7 @@ type HeaderProps = {
 }
 
 export const Header = ({ onOpenSidebarClick }: HeaderProps) => (
-  <header className="sticky top-0 z-30 bg-primary-500 text-white">
+  <header className="sticky top-0 z-[2000] bg-primary-500 text-white">
     <div className="mx-auto flex flex-row items-center justify-between py-4 xl:container max-xl:px-6 max-md:px-4">
       <div className="flex items-center gap-6">
         <button title="Open side menu" onClick={onOpenSidebarClick}>

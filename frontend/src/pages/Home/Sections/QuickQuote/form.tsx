@@ -37,7 +37,11 @@ const quickQuoteSchema = z.object({
 }).refine(data => data.from !== data.destination, {
   message: 'Destination should be different than From',
   path: ['destination']
-}).refine(data => data.departDate >= new Date(), {
+}).refine(data => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return data.departDate >= today;
+}, {
   message: 'Depart date should be greater than Today!',
   path: ['departDate']
 }).refine(data => data.returnDate > data.departDate, {
