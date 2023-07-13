@@ -18,13 +18,15 @@ type Quote = {
 export const PendingQuotes = () => {
   const {
     data,
-    isLoading
-  } = useQuery<Quote[]>({ queryKey: ['quotes'], queryFn: getQuotes });
+    isLoading,
+    refetch
+  } = useQuery<Quote[]>({ queryKey: ['quotes'], queryFn: getQuotes, retry: false, refetchOnWindowFocus: false });
 
   return (
     <Card
       icon={<ClockCounterClockwise />}
       title="Pending quotes"
+      onRefreshClick={() => refetch()}
       isRefreshable
       isDraggable>
       <div className="p-4">

@@ -10,6 +10,10 @@
   --toastify-color-success: #5BBFBA;
 }
 
+.leaflet-pane {
+  z-index: 20;
+}
+
 .leaflet-control-zoom {
   display: flex;
   flex-direction: row-reverse;

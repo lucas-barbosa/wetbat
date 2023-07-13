@@ -9,16 +9,18 @@ type CardProps = {
   isDraggable?: boolean;
   isRefreshable?: boolean;
   hasOptions?: boolean;
+  onRefreshClick?: () => void;
 };
 
 export const Card = ({
   children,
   icon,
   title,
+  onRefreshClick,
   className = '',
   isDraggable = false,
   isRefreshable = false,
-  hasOptions = false
+  hasOptions = false,
 }: CardProps) => (
   <section className={`rounded-md border-2 border-gray-300 bg-white shadow-sm ${className}`}>
     {title && (
@@ -27,7 +29,7 @@ export const Card = ({
         <h2 className="text-lg font-medium text-primary-500">{title}</h2>
 
         <div className="ml-auto flex flex-row items-center gap-2 text-xl text-gray-400">
-          {isRefreshable && <span><ArrowCounterClockwise weight="bold" /></span>}
+          {isRefreshable && <button type="button" onClick={onRefreshClick}><ArrowCounterClockwise weight="bold" /></button>}
           {isDraggable && <span><ArrowsOut weight="bold"/></span>}
           {hasOptions && <span><DotsThreeVertical weight="bold" /></span>}
         </div>
