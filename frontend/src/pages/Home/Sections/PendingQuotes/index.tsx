@@ -1,46 +1,76 @@
-import { ClockCounterClockwise } from '@phosphor-icons/react';
+import { ClockCounterClockwise, XCircle } from '@phosphor-icons/react';
+import { useQuery } from '@tanstack/react-query';
 import { Card } from '../../../../components/Card';
+import { Spinner } from '../../../../components/Spinner';
+import { getQuotes } from '../../../../services/quotes/get-quotes';
 
-const items = [
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-  { id: '123455678', name: 'Katty Abcdefghij', destination: 'Vancounver', price: 1000.00 },
-];
+type Quote = {
+  id: number;
+  customerName: string;
+  from: string;
+  destination: string;
+  passengerCount: number;
+  departureDate: Date;
+  returnDate: Date;
+  modeOfTransportation: string;
+}
 
-export const PendingQuotes = () => (
-  <Card
-    icon={<ClockCounterClockwise />}
-    title="Pending quotes"
-    isRefreshable
-    isDraggable>
-    <div className="p-4">
-      <table className="w-full text-left text-gray-500">
-        <thead className="text-sm font-medium uppercase">
-          <tr>
-            <th>ID #</th>
-            <th>Name</th>
-            <th>Destination</th>
-            <th>Price</th>
-          </tr>
-        </thead>
+export const PendingQuotes = () => {
+  const {
+    data,
+    isLoading
+  } = useQuery<Quote[]>({ queryKey: ['quotes'], queryFn: getQuotes });
 
-        <tbody className="text-sm">
-          {items.map(item => (
+  return (
+    <Card
+      icon={<ClockCounterClockwise />}
+      title="Pending quotes"
+      isRefreshable
+      isDraggable>
+      <div className="p-4">
+        <table className="w-full text-left text-gray-500">
+          <thead className="text-sm font-medium uppercase">
             <tr>
-              <td className="py-2">{item.id}</td>
-              <td className="py-2">{item.name}</td>
-              <td className="py-2 uppercase">{item.destination}</td>
-              <td className="py-2">$ {item.price.toFixed(2)}</td>
+              <th>ID #</th>
+              <th>Name</th>
+              <th>Destination</th>
+              <th>Price</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </Card>
-);
+          </thead>
+
+          <tbody className="text-sm">
+            {isLoading && (
+              <tr>
+                <td colSpan={4} className="py-8">
+                  <div className="flex justify-center">
+                    <Spinner />
+                  </div>
+                </td>
+              </tr>
+            )}
+
+            {!isLoading && !data?.length && (
+              <tr>
+                <td colSpan={4} className="py-8">
+                  <div className="flex w-full flex-col items-center justify-center">
+                    <XCircle size={30} />
+                    <p>No quotes found!</p>
+                  </div>
+                </td>
+              </tr>
+            )}
+
+            {data?.length && data.map(item => (
+              <tr>
+                <td className="py-2">{item.id.toString().padStart(8, '0')}</td>
+                <td className="py-2">{item.customerName}</td>
+                <td className="py-2 uppercase">{item.destination}</td>
+                <td className="py-2">$1,000</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Card>
+  );
+};

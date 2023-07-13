@@ -1,11 +1,12 @@
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 import { z } from 'zod';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useQueryClient } from '@tanstack/react-query';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { Field } from '../../../../components/Field';
 import { createQuote } from '../../../../services/quotes/create-quote';
-import { toast } from 'react-toastify';
 
 const inputClasses = 'w-full border-0 bg-transparent p-2 pt-0 outline-none';
 
@@ -47,6 +48,8 @@ const quickQuoteSchema = z.object({
 type QuickQuote = z.infer<typeof quickQuoteSchema>;
 
 export const QuickQuoteForm = () => {
+  const queryClient = useQueryClient();
+
   const {
     reset,
     register,
@@ -64,6 +67,7 @@ export const QuickQuoteForm = () => {
     try {
       await createQuote(data);
       toast.success('Quote created successfully!');
+      queryClient.invalidateQueries({ queryKey: ['quotes'] });
       reset(); 
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'An error occured. Try again later!';
