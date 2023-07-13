@@ -23,6 +23,7 @@ export const PendingQuotes = () => {
   const {
     data,
     isLoading,
+    isRefetching,
     refetch
   } = useQuery<Quote[]>({
     queryKey: ['quotes'],
@@ -51,7 +52,7 @@ export const PendingQuotes = () => {
             </thead>
 
             <tbody className="text-sm">
-              {isLoading && (
+              {(isLoading || isRefetching) && (
                 <tr>
                   <td colSpan={4} className="py-8">
                     <div className="flex justify-center">
@@ -61,7 +62,7 @@ export const PendingQuotes = () => {
                 </tr>
               )}
 
-              {!isLoading && !data?.length && (
+              {!isLoading && !isRefetching && !data?.length && (
                 <tr>
                   <td colSpan={4} className="py-8">
                     <div className="flex w-full flex-col items-center justify-center">
@@ -72,7 +73,7 @@ export const PendingQuotes = () => {
                 </tr>
               )}
 
-              {!!data?.length && data.map(item => (
+              {!isLoading && !isRefetching && !!data?.length && data.map(item => (
                 <tr key={`pending-quote-${item.id}`}>
                   <td className="py-2">
                     <button
