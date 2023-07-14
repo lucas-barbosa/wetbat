@@ -18,3 +18,12 @@ services:
       - PORT=3000
     depends_on:
       - database
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "5000:5000"
+    environment:
+      - VITE_BACKEND_URL=backend:3000
+    depends_on:
+      - backend
