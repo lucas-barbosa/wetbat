@@ -1,0 +1,7 @@
+node_modules
+dist
+.dockerignore
+.env
+.eslintrc.json
+.gitignore
+jest.config.js
