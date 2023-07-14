@@ -1,4 +1,4 @@
-# Wet Bat Travel Agency
+# Wet Bat Travel Agency ![Challenge](https://img.shields.io/badge/DEV%20CHALLENGE-5BBFBA) ![MVP](https://img.shields.io/badge/MVP-5F6CAF)
 
 Welcome to the Wet Bat Travel Agency project! This repository contains both the frontend and backend code for the Wet Bat Travel Agency prototype. The project was developed as part of a challenge and is hosted using free tier services. You can access it at [https://lucas-barbosa.github.io/wetbat/](https://lucas-barbosa.github.io/wetbat/).
 
