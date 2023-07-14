@@ -20,5 +20,6 @@ COPY package.json .
 COPY yarn.lock .
 
 RUN yarn install --production
+RUN apt-get update -y && apt-get install -y openssl
 
 CMD [ "yarn", "start" ]

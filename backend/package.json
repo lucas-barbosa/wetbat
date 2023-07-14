@@ -37,11 +37,11 @@
     "zod": "^3.21.4"
   },
   "scripts": {
+    "@run": "node dist/main/server.js",
     "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "db:migrate": "prisma generate && prisma migrate deploy",
     "dev": "tsnd --respawn --transpile-only --ignore-watch node_modules -r tsconfig-paths/register src/main/server.ts",
-    "run": "node dist/main/server.js",
-    "start": "yarn db:migrate && yarn run",
+    "start": "yarn db:migrate && yarn @run",
     "test": "jest"
   }
 }
