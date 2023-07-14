@@ -4,46 +4,44 @@ Welcome to the Wet Bat Travel Agency project! This repository contains both the 
 
 ## Index
 
-- [Wet Bat Travel Agency](#wet-bat-travel-agency)
-  - [Index](#index)
-  - [Introduction](#introduction)
-  - [Live Demo](#live-demo)
-  - [Project Overview](#project-overview)
-    - [Frontend:](#frontend)
-    - [Backend:](#backend)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Development Setup](#development-setup)
-      - [Database Setup](#database-setup)
-      - [Backend Setup](#backend-setup)
-      - [Frontend Setup](#frontend-setup)
-  - [Testing](#testing)
-  - [Deployment](#deployment)
+- [Introduction](#introduction)
+- [Live Demo](#computer-live-demo)
+- [Project Overview](#eyeglasses-project-overview)
+  - [Frontend:](#desktop_computer-frontend)
+  - [Backend:](#gear-backend)
+- [Getting Started](#grey_question-getting-started)
+  - [Prerequisites](#page_facing_up-prerequisites)
+  - [Development Setup](#wrench-development-setup)
+    - [Database Setup](#game_die-database-setup)
+    - [Backend Setup](#gear-backend-setup)
+    - [Frontend Setup](#desktop_computer-frontend-setup)
+- [Testing](#test_tube-testing)
+- [Deployment](#rocket-deployment)
 
 ## Introduction
 
 The Wet Bat Travel Agency prototype is a full-stack application that aims to demonstrate the minimal quoting functionality for a travel agency. The project utilizes React for the frontend, Node.js for the backend, and Postgres for the database. The design and details of the prototype can be found in the [challenge-description.pdf](challenge-description.pdf) file within this repository.
 
-## Live Demo
+## :computer: Live Demo
 
 A live demo of the Wet Bat Travel Agency prototype is available at [https://lucas-barbosa.github.io/wetbat/](https://lucas-barbosa.github.io/wetbat/). Please note that the demo is hosted using free tier services, so performance and availability may vary.
 
-## Project Overview
+## :eyeglasses: Project Overview
 The Wet Bat Travel Agency prototype is built using the following technologies:
 
-### Frontend:
-- React: A popular JavaScript library for building user interfaces.
-- Vite: A fast build tool that provides a lightning-fast development experience for modern web projects.
-- Tailwind CSS: A utility-first CSS framework that allows for rapid UI development.
-- TypeScript: A statically-typed superset of JavaScript that enhances developer productivity and code quality.
-- React Query: A data fetching and state management library for React applications.
+### :desktop_computer: Frontend:
+* [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+* [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+* [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+* [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+* [![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)](https://tanstack.com/query/v3/)
 
-### Backend:
-- Node.js: A JavaScript runtime that allows you to build scalable and performant server-side applications.
-- Express: A fast and minimalist web application framework for Node.js.
-- TypeScript: A statically-typed superset of JavaScript that enhances developer productivity and code quality.
-- Prisma: A modern database toolkit that provides an ORM (Object-Relational Mapping) for working with databases.
-- Jest: A JavaScript testing framework for writing unit tests.
+### :gear: Backend:
+* [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+* [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
+* [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+* [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](https://www.prisma.io/)
+* [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
 
 The project utilizes a Dockerized development environment using docker-compose to run the services. However, it is also possible to run the services separately without Docker by configuring the required environment variables.
 
@@ -53,15 +51,15 @@ The backend is developed following the principles of **Clean Architecture**. Thi
 - **Flexibility**: The architecture allows for easy swapping of libraries and frameworks, such as using Koa instead of Express or TypeORM instead of Prisma, without affecting the core business logic.
 - **Testability**: Clean Architecture encourages writing testable code, making it easier to write unit tests for business rules and application logic.
 
-## Getting Started
-### Prerequisites
+## :grey_question: Getting Started
+### :page_facing_up: Prerequisites
 To run the project, ensure you have the following installed:
 
 - Docker and docker-compose (if running with Docker)
 - Node.js (if running services separately)
 - PostgreSQL (if running services separately)
 
-### Development Setup
+### :wrench: Development Setup
 With Docker
 
 1. Clone the repository:
@@ -84,7 +82,7 @@ docker-compose up -d
 
 Running Services Separately
 
-#### Database Setup
+#### :game_die: Database Setup
 
 1. Start a PostgreSQL database:
 
@@ -95,7 +93,7 @@ docker run -d --name wetbat-db -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpasswor
 This command starts a PostgreSQL container named "wetbat-db" with the password "mysecretpassword" and exposes port 5432.
 
 
-#### Backend Setup
+#### :gear: Backend Setup
 
 1. Clone the repository:
 
@@ -133,7 +131,7 @@ yarn prisma migrate deploy
 yarn dev
 ```
 
-#### Frontend Setup
+#### :desktop_computer: Frontend Setup
 1. Change to the frontend directory:
 
 ```bash
@@ -156,7 +154,7 @@ yarn dev
 
 5. Access the frontend application at http://localhost:5173/wetbat.
 
-## Testing
+## :test_tube: Testing
 The project includes unit tests for the backend services implemented using Jest. To run the tests, follow these steps:
 
 1. Change to the backend directory:
@@ -171,7 +169,7 @@ cd wetbat/backend
 yarn test
 ```
 
-## Deployment
+## :rocket: Deployment
 
 The Wet Bat Travel Agency project is deployed using the following services:
 
