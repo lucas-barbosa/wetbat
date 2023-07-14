@@ -144,7 +144,7 @@ cd wetbat/frontend
 yarn install
 ```
 
-3. Set the VITE_BACKEND_URL environment variable in a .env file to the backend URL (http://localhost:8080 if running the backend with Docker).
+3. Set the VITE_BACKEND_URL environment variable in a .env file to the backend URL (http://localhost:3000 if running the backend with Docker).
 
 4. Start the frontend development server:
 
