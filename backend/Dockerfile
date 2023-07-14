@@ -1,4 +1,4 @@
-FROM node:18 as builder
+FROM node:18-slim as builder
 
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ COPY src ./src
 RUN yarn install
 RUN yarn build
 
-FROM node:18 AS final
+FROM node:18-slim AS final
 
 WORKDIR /usr/src/app
 
