@@ -2,7 +2,7 @@ import { Card } from '../../../../components/Card';
 
 const defaultReportItems: ReportItem[] = [
   { label: 'New Leads', count: 101 },
-  { label: 'Qootes Created', count: 35 },
+  { label: 'Quotes Created', count: 35 },
   { label: 'Pending Order', count: 40 },
 ];
 
